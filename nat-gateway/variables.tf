@@ -18,7 +18,7 @@ variable "public_subnet_az1_id" {
 
 variable "internet_gateway" {
   description = "The Internet Gateway"
-  type        = string
+  type        = any
 }
 
 
