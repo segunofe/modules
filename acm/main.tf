@@ -1,13 +1,9 @@
-
 # Import an existing certificate on ACM to Terraform
-
 data "aws_acm_certificate" "existing" {
   domain   = var.domain_name
   statuses = ["ISSUED"]
   most_recent = true
 }
-
-
 
 
 
