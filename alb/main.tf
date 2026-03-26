@@ -55,7 +55,8 @@ resource "aws_lb_listener" "alb_https_listener" {
   port              = 443
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = var.certificate_arn
+  certificate_arn   = data.aws_acm_certificate.existing.arn #use this if you want to use an existing certificate instead of creating a new one with ACM
+  #certificate_arn   = var.certificate_arn #use this if you create a new certificate with ACM
 
   default_action {
     type             = "forward"
